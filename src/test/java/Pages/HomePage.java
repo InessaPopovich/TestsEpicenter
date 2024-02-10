@@ -6,14 +6,14 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage{
 
+    public WebElement loginButton = findByXpath("//span[@class='_VckGS5']");
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-
-    public WebElement clickToLoginButton(){
-        return findByXpath("//span[@class='_VckGS5']");
+    public void clickToLoginButton(){
+        loginButton.click();
     }
 
 

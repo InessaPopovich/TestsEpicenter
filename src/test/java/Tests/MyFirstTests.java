@@ -20,7 +20,7 @@ public class MyFirstTests extends TestInit {
 
     @Test
     public void successfulLogIn() {
-        homePage.clickToLoginButton().click();
+        homePage.clickToLoginButton();
         authorizationPage.textLoginInput().click();
         authorizationPage.textLoginInput().sendKeys("958925913");
         authorizationPage.textPasswordInput().click();
@@ -28,14 +28,12 @@ public class MyFirstTests extends TestInit {
         authorizationPage.clickDoAuthorization().click();
     }
 
-
     @Test
     public void findElements() {
         homePage.clickSearchField().click();
         homePage.clickSearchField().sendKeys("dog\n");
 
     }
-
 
     @Test
     public void selectLocation() {
