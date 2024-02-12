@@ -6,24 +6,23 @@ import org.openqa.selenium.WebElement;
 
 public class AuthorizationPage extends BasePage {
 
-
     public AuthorizationPage(WebDriver driver) {
         super(driver);
     }
 
-
+    public WebElement LoginInput = findByXpath("//input[@name='login']");
     public WebElement textLoginInput() {
-        return findByXpath("//input[@name='login']");
+       LoginInput.sendKeys("958925913");
     }
 
-
+    public WebElement PasswordInput = findByXpath("//input[@name='password']");
     public WebElement textPasswordInput() {
-        return findByXpath("//input[@name='password']");
+       PasswordInput.sendKeys("Bytccf17?");
     }
 
-
+    public WebElement DoAuthorization = findByXpath("//button[@class='epicentr-nuxt-components-ui-button__button epicentr-nuxt-components-ui-button__button--blue epicentr-nuxt-components-forms-auth__send']");
     public WebElement clickDoAuthorization() {
-        return findByXpath("//button[@class='epicentr-nuxt-components-ui-button__button epicentr-nuxt-components-ui-button__button--blue epicentr-nuxt-components-forms-auth__send']");
+        DoAuthorization.click();
     }
 
 

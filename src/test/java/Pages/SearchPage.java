@@ -10,8 +10,9 @@ public class SearchPage extends BasePage{
         super(driver);
     }
 
+    public WebElement BinButton = findByXpath("//button[@data-card-params=\"6611897, 1,1\"]");
     public WebElement clickBinButton() {
-        return findByXpath("//button[@data-card-params='144140, 1,1']");
+        BinButton.click();
     }
 
 }

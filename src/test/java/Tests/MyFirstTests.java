@@ -21,36 +21,33 @@ public class MyFirstTests extends TestInit {
     @Test
     public void successfulLogIn() {
         homePage.clickToLoginButton();
-        authorizationPage.textLoginInput().click();
-        authorizationPage.textLoginInput().sendKeys("958925913");
-        authorizationPage.textPasswordInput().click();
-        authorizationPage.textPasswordInput().sendKeys("Bytccf17?");
-        authorizationPage.clickDoAuthorization().click();
+        authorizationPage.textLoginInput();
+        authorizationPage.textPasswordInput();
+        authorizationPage.clickDoAuthorization();
     }
 
     @Test
     public void findElements() {
-        homePage.clickSearchField().click();
-        homePage.clickSearchField().sendKeys("dog\n");
-
+        homePage.clickSearchField();
+        homePage.writeSearchField();
+        //not done test
     }
 
     @Test
     public void selectLocation() {
-        locationPage.clickLocationButton().click();
-        locationPage.clickSearchLocation().click();
-        locationPage.clickSearchLocation().sendKeys("Бровари");
-        locationPage.clickBrovaryLocation().click();
-        locationPage.ChooseShopInBrovary().click();
+        locationPage.clickLocationButton();
+        locationPage.writeSearchLocation();
+        locationPage.clickBrovaryLocation();
+        locationPage.ChooseShopInBrovary();
     }
 
 
     @Test
     public void addProductToBin() {
-        homePage.clickSearchField().click();
-        homePage.clickSearchField().sendKeys("dog\n");
+        homePage.clickSearchField();
+        homePage.writeSearchField();
         searchPage.clickBinButton();
-
+        //assert?
     }
 
 

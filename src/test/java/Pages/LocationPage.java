@@ -11,21 +11,27 @@ public class LocationPage extends BasePage{
         super(driver);
     }
 
-
+    public WebElement LocationButton = findByXpath("//*[@id='global-site-header']/header/div/div[4]/div[2]");
     public WebElement clickLocationButton() {
-        return findByXpath("//*[@id='global-site-header']/header/div/div[4]/div[2]");
+        LocationButton.click();
     }
+
+    public WebElement SearchLocation = findByXpath("//input[@class='input _MGeWxP _FeIEJW']");
     public WebElement clickSearchLocation() {
-        return findByXpath("//input[@class='input _MGeWxP _FeIEJW']");
+        SearchLocation.click();
     }
 
+   public WebElement writeSearchLocation() {
+        SearchLocation.sendKeys("Бровари");
+   }
 
+    public WebElement BrovaryLocation = findByXpath("/html/body/div[6]/div/div/div[2]/div[1]/div/div[3]/div[2]/div/div[2]");
     public WebElement clickBrovaryLocation() {
-        return findByXpath("/html/body/div[6]/div/div/div[2]/div[1]/div/div[3]/div[2]/div/div[2]");
+        BrovaryLocation.click();
     }
 
-
+    public WebElement ShopInBrovary = findByXpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div/div/div[1]/button");
     public WebElement ChooseShopInBrovary() {
-        return findByXpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div/div/div[1]/button");
+        ShopInBrovary.click();
     }
 }
