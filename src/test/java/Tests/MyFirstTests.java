@@ -30,6 +30,7 @@ public class MyFirstTests extends TestInit {
         homePage.sendKeysToSearchField("dog\n");
         SearchPage searchPage =new SearchPage(this.getDriver()); // ?
         searchPage.clickBinButton();
+
         BinPage binPage = new BinPage(this.getDriver()); // ?
         Assert.assertTrue(binPage.nameProduct().isDisplayed());
     }
