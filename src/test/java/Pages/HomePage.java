@@ -3,31 +3,41 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+public class HomePage extends BasePage {
+    protected WebElement field; // ?
 
-public class HomePage extends BasePage{
+
+    protected WebElement loginButton() {
+        return this.findByXpath("//span[@class='_VckGS5']");
+    }
+
+
+    protected WebElement searchField() {
+        return this.findByXpath("//input[@type='text']");
+    }
+
+
+    protected WebElement location() {
+        return this.findByXpath("//div[@class='header__locations-opener']");
+    }
+
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement loginButton = findByXpath("//span[@class='_VckGS5']");
-    public void clickToLoginButton(){
-        loginButton.click();
-    }
 
-    public WebElement SearchField = findByXpath("//input[@type='text']");
-    public WebElement clickSearchField(){
-        SearchField.click();
-    }
-
-    public WebElement writeSearchField(){
-        SearchField.sendKeys("dog\n");
+    public void sendKeysToSearchField(String text) {
+        this.searchField().sendKeys(new CharSequence[]{text});
     }
 
 
-    public WebElement Location = findByXpath("//div[@class='header__locations-opener']");
-    public WebElement clickLocation(){
-        Location.click();
+    public void clickLoginButton() {
+        this.loginButton().click();
     }
 
 
+    public void clickLocation() {
+        this.location().click();
+    }
 }

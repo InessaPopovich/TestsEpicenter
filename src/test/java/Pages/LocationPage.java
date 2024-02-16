@@ -4,34 +4,48 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class LocationPage extends BasePage{
+public class LocationPage extends BasePage {
+    public WebElement locationButton() {
+        return this.findByXpath("//*[@id='global-site-header']/header/div/div[4]/div[2]");
+    }
+
+
+    public WebElement searchFealdLocation() {
+        return this.findByXpath("//input[contains(@class, '_MGeWxP')]");
+    }
+
+
+    public WebElement brovaryLocation() {
+        return this.findByXpath("//b[contains(text(), 'Бровари')]/parent::div");
+    }
+
+
+    public WebElement shopInBrovary() {
+        return this.findByXpath("(//button[contains(@class, 'btn--flex') and contains(text(), 'Обрати')])[1]");
+    }
 
 
     public LocationPage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement LocationButton = findByXpath("//*[@id='global-site-header']/header/div/div[4]/div[2]");
-    public WebElement clickLocationButton() {
-        LocationButton.click();
+
+    public void clickLocationButton() {
+        this.locationButton().click();
     }
 
-    public WebElement SearchLocation = findByXpath("//input[@class='input _MGeWxP _FeIEJW']");
-    public WebElement clickSearchLocation() {
-        SearchLocation.click();
+
+    public void sendKeysToSearchFealdLocation(String text) {
+        this.searchFealdLocation().sendKeys(new CharSequence[]{text});
     }
 
-   public WebElement writeSearchLocation() {
-        SearchLocation.sendKeys("Бровари");
-   }
 
-    public WebElement BrovaryLocation = findByXpath("/html/body/div[6]/div/div/div[2]/div[1]/div/div[3]/div[2]/div/div[2]");
-    public WebElement clickBrovaryLocation() {
-        BrovaryLocation.click();
+    public void clickBrovaryLocation() {
+        this.brovaryLocation().click();
     }
 
-    public WebElement ShopInBrovary = findByXpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div/div/div[1]/button");
-    public WebElement ChooseShopInBrovary() {
-        ShopInBrovary.click();
+
+    public void clickShopInBrovary() {
+        this.shopInBrovary().click();
     }
 }

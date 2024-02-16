@@ -6,25 +6,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+
 public class TestInit {
-    public ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
+    private WebDriver driver;
+
     @BeforeTest
     public void openBrowser() {
         WebDriverManager.chromedriver().setup();
-        driver.set(new ChromeDriver());
-
-        getDriver().manage().window().maximize();
-        getDriver().get("https://epicentrk.ua/");
-
+        this.driver = new ChromeDriver();
+        this.driver.manage().window().maximize();
+        this.driver.get("https://epicentrk.ua/");
     }
 
-    public WebDriver getDriver(){
-        return driver.get();
+
+    public WebDriver getDriver() {
+        return this.driver;
     }
+
 
     @AfterTest
-    public void closeBrowser(){
-        getDriver().quit();
+    public void closeBrowser() {
+        this.driver.quit();
     }
-
 }
+

@@ -1,54 +1,56 @@
 package Tests;
 
-
-import Pages.AuthorizationPage;
-import Pages.HomePage;
-import Pages.LocationPage;
-import Pages.SearchPage;
+import Pages.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import javax.swing.table.TableRowSorter;
 
 
 @Test
 public class MyFirstTests extends TestInit {
+    public MyFirstTests() {
+    }
 
-    HomePage homePage = new HomePage(getDriver());
-    AuthorizationPage authorizationPage = new AuthorizationPage(getDriver());
-    LocationPage locationPage = new LocationPage(getDriver());
-    SearchPage searchPage = new SearchPage(getDriver());
 
     @Test
     public void successfulLogIn() {
-        homePage.clickToLoginButton();
-        authorizationPage.textLoginInput();
-        authorizationPage.textPasswordInput();
-        authorizationPage.clickDoAuthorization();
+        HomePage homePage = new HomePage(this.getDriver()); // ?
+        homePage.clickLoginButton();
+        AuthorizationPage authorizationPage = new AuthorizationPage(this.getDriver()); // ?
+        authorizationPage.sendKeysToLoginInputField();
+        authorizationPage.sendKeysToPasswordInputField();
+        authorizationPage.clickAuthorizationButton();
     }
+
 
     @Test
     public void findElements() {
-        homePage.clickSearchField();
-        homePage.writeSearchField();
-        //not done test
+        HomePage homePage = new HomePage(this.getDriver()); // ?
+        homePage.sendKeysToSearchField("dog\n");
+        SearchPage searchPage =new SearchPage(this.getDriver()); // ?
+        searchPage.clickBinButton();
+        BinPage binPage = new BinPage(this.getDriver()); // ?
+        Assert.assertTrue(binPage.nameProduct().isDisplayed());
     }
+
 
     @Test
     public void selectLocation() {
+        LocationPage locationPage = new LocationPage(this.getDriver());
         locationPage.clickLocationButton();
-        locationPage.writeSearchLocation();
+        locationPage.sendKeysToSearchFealdLocation("Бровари");
         locationPage.clickBrovaryLocation();
-        locationPage.ChooseShopInBrovary();
+        locationPage.clickShopInBrovary();
     }
 
 
     @Test
     public void addProductToBin() {
-        homePage.clickSearchField();
-        homePage.writeSearchField();
+        HomePage homePage = new HomePage(this.getDriver());
+        homePage.sendKeysToSearchField("dog\n");
+        SearchPage searchPage = new SearchPage(this.getDriver());
         searchPage.clickBinButton();
-        //assert?
     }
-
-
 }
+
