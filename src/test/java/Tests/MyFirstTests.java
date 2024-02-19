@@ -69,6 +69,7 @@ public class MyFirstTests extends TestInit {
         makeOrderPage.chooseAdress();
         makeOrderPage.chooseWayPay();
         Assert.assertTrue(makeOrderPage.buyButton().isDisplayed());
+
     }
 }
 
