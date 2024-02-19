@@ -1,8 +1,6 @@
 package Tests;
 
 import Pages.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -31,7 +29,7 @@ public class MyFirstTests extends TestInit {
         SearchPage searchPage =new SearchPage(this.getDriver()); // ?
         searchPage.clickBinButton();
 
-        BinPage binPage = new BinPage(this.getDriver()); // ?
+        BasketPage binPage = new BasketPage(this.getDriver()); // ?
         Assert.assertTrue(binPage.nameProduct().isDisplayed());
     }
 
@@ -52,6 +50,25 @@ public class MyFirstTests extends TestInit {
         homePage.sendKeysToSearchField("dog\n");
         SearchPage searchPage = new SearchPage(this.getDriver());
         searchPage.clickBinButton();
+    }
+
+    @Test
+    public void doOrder() {
+        HomePage homePage = new HomePage(this.getDriver());
+        homePage.sendKeysToSearchField("dog\n");
+        SearchPage searchPage = new SearchPage(this.getDriver());
+        searchPage.clickBinButton();
+        BasketPage basketPage = new BasketPage(this.getDriver());
+        basketPage.clickDoOrder();
+        MakeOrderPage makeOrderPage = new MakeOrderPage(this.getDriver());
+        makeOrderPage.writeNumber();
+        makeOrderPage.writeName();
+        makeOrderPage.writeSurname();
+        makeOrderPage.writeEmail();
+        makeOrderPage.chooseWayDelivery();
+        makeOrderPage.chooseAdress();
+        makeOrderPage.chooseWayPay();
+        Assert.assertTrue(makeOrderPage.buyButton().isDisplayed());
     }
 }
 
