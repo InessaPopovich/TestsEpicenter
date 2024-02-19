@@ -53,5 +53,6 @@ public class MyFirstTests extends TestInit {
         SearchPage searchPage = new SearchPage(this.getDriver());
         searchPage.clickBinButton();
     }
+
 }
 
