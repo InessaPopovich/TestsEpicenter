@@ -10,19 +10,19 @@ public class MakeOrderPage extends BasketPage{
     }
 
     public WebElement inputNumber() {
-        return this.findByXpath("//input[@id='auth-number_0'] ");
+        return this.findByXpath("//input[@id='auth-number_0']");
     }
 
     public WebElement inputName() {
-        return this.findByXpath("//input[@id='auth-name_0'] ");
+        return this.findByXpath("//input[@id='auth-name_0']");
     }
 
     public WebElement inputSurname() {
-        return this.findByXpath("//input[@id='auth-family_0'] ");
+        return this.findByXpath("//input[@id='auth-family_0']");
     }
 
     public WebElement inputEmail() {
-        return this.findByXpath("//input[@id='auth-email_0'] ");
+        return this.findByXpath("//input[@id='auth-email_0']");
     }
 
     public WebElement wayDelivery() {
@@ -30,7 +30,7 @@ public class MakeOrderPage extends BasketPage{
     }
 
     public WebElement adress() {
-        return this.findByXpath("//div[contains(text(), 'Бровари, вул. Київська, 253,')]");
+        return this.findByXpath("(//div[@tabindex='104'])[3]");
     }
 
     public WebElement wayPay() {
@@ -42,35 +42,29 @@ public class MakeOrderPage extends BasketPage{
     }
 
     public void writeNumber() {
-        this.inputNumber().sendKeys("095 892 5913");
+        inputNumber().sendKeys("095 892 5913");
     }
 
     public void writeName() {
-        this.inputName().sendKeys("Інеса");
+        inputName().sendKeys("Інеса");
     }
 
     public void writeSurname() {
-        this.inputSurname().sendKeys("Попович");
+        inputSurname().sendKeys("Попович");
     }
 
     public void writeEmail() {
-        this.inputEmail().sendKeys("inessa.popovich@gmail.com");
+        inputEmail().sendKeys("inessa.popovich@gmail.com");
     }
 
     public void chooseWayDelivery() {
-        this.wayDelivery().click();
+        wayDelivery().click();
     }
     public void chooseAdress() {
-        this.adress().click();
+        adress().click();
     }
-
     public void chooseWayPay() {
-        this.wayPay().click();
+        wayPay().click();
     }
-
-
-
-
-
-
+    public String MakeOrderPageURL = "https://epicentrk.ua/ua/personal/order/make/";
 }

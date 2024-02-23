@@ -12,16 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
     public WebDriver driver;
 
-
     public BasePage(WebDriver driver) {
         this.driver = driver;
     }
 
-
     public WebElement findByXpath(String xpath) {
         return (WebElement)(new WebDriverWait(this.driver, Duration.ofSeconds(10L))).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
     }
-
 
     protected List<WebElement> findsByXpath(String path) {
         WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));

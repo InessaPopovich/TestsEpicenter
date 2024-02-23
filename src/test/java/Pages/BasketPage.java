@@ -12,10 +12,15 @@ public class BasketPage extends BasePage{
 public WebElement nameProduct(){
         return findByXpath("//a[@class='link basket-product__info-name']");
 }
+
 public WebElement order() {
-        return this.findByXpath("//button[@tabindex='93']");
+        return findByXpath("//button[@tabindex='93']");
 }
+
+    public WebElement ElementOnBasketPage() {
+        return this.findByXpath("//button[@tabindex='92']");
+    }
 public void clickDoOrder() {
-        this.order().click();
+        order().click();
 }
 }
