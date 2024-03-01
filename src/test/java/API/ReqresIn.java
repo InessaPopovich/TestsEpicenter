@@ -44,7 +44,7 @@ public class ReqresIn {
     @Test
     public void postPojoClassTest() {
         Pojo pojo = new Pojo("eve.holt@reqres.in", "pistol");
-        Response response = given()
+        Response response = given()    //використання бібліотеки RestAssured
                 .contentType(ContentType.JSON)
                 .baseUri("https://reqres.in/")
                 .when()

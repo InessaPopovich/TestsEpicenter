@@ -1,4 +1,4 @@
-package MakeUpTests;
+package WikipediaTests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -6,16 +6,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public class MakeUpTestInit {
+public class TestInit {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeTest
-    public void openBrowser() {
+    public void goToGoogle() {
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
         this.driver.manage().window().maximize();
-        this.driver.get("https://makeup.com.ua/ua/");
+        this.driver.get("https://www.wikipedia.org/");
     }
 
     public WebDriver getDriver() {
@@ -23,7 +23,7 @@ public class MakeUpTestInit {
     }
 
     @AfterTest
-    public void closeBrowser() {
+    public void closeGoogle() {
         this.driver.quit();
     }
 }
