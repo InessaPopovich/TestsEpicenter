@@ -1,5 +1,4 @@
 package PagesUltimateSite;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -28,6 +27,26 @@ public class HomePageUltimate extends BasePage{
         return this.findByXpath("(//button[@name='et_builder_submit_button'])[1]");
     }
 
+    public WebElement sectionButton1() {
+        return this.findByXpath("//a[contains(@class, 'et_pb_button_0')]");
+    }
+
+    public WebElement sectionButton2() {
+        return this.findByXpath("//div[contains(@class, 'et_pb_button_1_wrapper')]//a[contains(@class,'et_pb_button')]");
+    }
+
+    public WebElement sectionButton3() {
+        return this.findByXpath("//a[contains(@class,'et_pb_button_2')]");
+    }
+
+    public WebElement sectionButton4() {
+        return this.findByXpath("//div[contains(@class, 'et_pb_button_module_wrapper')]//a[contains(@class, 'et_pb_button_3')]");
+    }
+
+    public WebElement sectionButton5() {
+        return this.findByXpath("//div[contains(@class,'et_pb_button_6_wrapper')]//a[contains(@class, 'et_pb_button')]");
+    }
+
     public void inputName() {
         nameField().sendKeys("Inessa");
     }
@@ -48,5 +67,24 @@ public class HomePageUltimate extends BasePage{
         submitButton().click();
     }
 
+    public void Button1() {
+        sectionButton1().click();
+    }
+
+    public void Button2() {
+        sectionButton2().click();
+    }
+
+    public void Button3() {
+        sectionButton3().click();
+    }
+
+    public void Button4() {
+        sectionButton4().click();
+    }
+
+    public void Button5() {
+        sectionButton5().click();
+    }
 
 }

@@ -1,4 +1,4 @@
-package TestsUltimateSite;
+package TestsUltimateSite2;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,20 +10,19 @@ public class TestInit {
     private WebDriver driver;
 
     @BeforeTest
-    public void goToGoogle() {
+    public void goToBrowser() {
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
         this.driver.manage().window().maximize();
-        this.driver.get("https://ultimateqa.com/complicated-page");
+        this.driver.get("https://ultimateqa.com/sample-application-lifecycle-sprint-1/");
     }
+
     public WebDriver getDriver() {
-        return this.driver;
+        return driver;
     }
 
     @AfterTest
-    public void closeGoogleBrowser() {
+    public void closeBrowser() {
         this.driver.quit();
     }
-
-
 }

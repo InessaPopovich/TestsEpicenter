@@ -1,5 +1,4 @@
 package TestsEpic;
-
 import PagesEpic.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
