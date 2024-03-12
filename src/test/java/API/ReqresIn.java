@@ -51,4 +51,31 @@ public class ReqresIn {
                 .extract().response();
     }
 
+    @Test
+    public void patchTest() {
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .baseUri("https://reqres.in/")
+                .when()
+                .patch("/api/users/2")
+                .then().log().all()
+                .statusCode(200)
+                .extract().response();
+    }
+
+    @Test
+    public void postPojoTest() {
+        Pojo2 pojo2 = new Pojo2("morpheus", "leader");
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .baseUri("https://reqres.in/")
+                .when()
+                .body(pojo2)
+                .post("/api/users")
+                .then().log().all()
+                .statusCode(201)
+                .extract().response();
+
+    }
+
 }

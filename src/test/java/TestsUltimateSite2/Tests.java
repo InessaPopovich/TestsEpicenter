@@ -15,5 +15,9 @@ public class Tests extends TestInit{
         afterHomePage.inputName2();
         afterHomePage.inputSurname();
         afterHomePage.buttonGoToSprint3();
+        afterHomePage.chooseGender();
+        afterHomePage.inputFirstName();
+        afterHomePage.inputSecondName();
+        afterHomePage.deliveryButton();
     }
 }
