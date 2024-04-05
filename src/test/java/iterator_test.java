@@ -15,7 +15,7 @@ public class iterator_test {
         Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()) {
             iterator.next();
-            iterator.remove();  //видаляємо всі елеенти списку
+            iterator.remove();  //видаляємо всі елементи списку
         }
         System.out.println(list);
     }
