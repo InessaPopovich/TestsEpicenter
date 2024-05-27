@@ -1,3 +1,5 @@
+package Object_Methods;
+
 import org.testng.annotations.Test;
 
 public class ObjectMethods_EQUALS_hashCode {
@@ -9,13 +11,12 @@ public class ObjectMethods_EQUALS_hashCode {
 
     @Test
     public void equals() {
-        System.out.println("person1=person2?" + person1.equals(person2));
-        System.out.println("person2=person3?" + person2.equals(person3));
+        System.out.println("person1=person2?" + person1 == person2); // false
+        System.out.println("person2=person3? " + person2.equals(person3)); // person2=person3?false
     }
 
     @Test
     public void hashcode_test() {
-        String b = "Inessa";
-        System.out.println(b.hashCode());
+        System.out.println(person1.hashCode());
     }
 }

@@ -1,3 +1,5 @@
+package Object_Methods;
+
 import org.testng.annotations.Test;
 
 public class ObjectMethods_CLONE implements Cloneable {
@@ -20,8 +22,8 @@ public class ObjectMethods_CLONE implements Cloneable {
     public void create_clone () {
         ObjectMethods_CLONE original = new ObjectMethods_CLONE();
         ObjectMethods_CLONE cloned = (ObjectMethods_CLONE) original.clone();
-        System.out.println("ORIGINAL" + original);
-        System.out.println("CLONED" + cloned);
-        System.out.println(original != cloned); //обидва об'єкти мають різні посилання в пам'яті
+        System.out.println("ORIGINAL_" + original);
+        System.out.println("CLONED_" + cloned);
+        System.out.println(original != cloned); //перевірка - обидва об'єкти мають різні посилання в пам'яті
     }
 }

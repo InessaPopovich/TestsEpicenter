@@ -1,3 +1,5 @@
+package Object_Methods;
+
 import org.testng.annotations.Test;
 
 public class ObjectMethods_getClass {

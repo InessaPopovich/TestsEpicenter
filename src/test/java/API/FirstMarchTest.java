@@ -3,6 +3,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class FirstMarchTest {
 
@@ -13,8 +14,9 @@ public class FirstMarchTest {
                 .baseUri("https://petstore.swagger.io/")
                 .when()
                 .get("v2/pet/findByStatus?status=sold")
-                .then().log().all()
+                .then()
                 .statusCode(200)
+                .body(matchesJsonSchemaInClasspath("json.schema.firstmarchtest"))
                 .extract().response();
     }
 

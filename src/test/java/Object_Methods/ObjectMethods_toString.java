@@ -1,3 +1,5 @@
+package Object_Methods;
+
 import org.testng.annotations.Test;
 
 public class ObjectMethods_toString {
@@ -22,8 +24,8 @@ public class ObjectMethods_toString {
 
     @Test
     public void create_string() {
-        ObjectMethods_toString bb = new ObjectMethods_toString("Inessa", "21", "0958925913");
-        System.out.println(bb);
+        ObjectMethods_toString person = new ObjectMethods_toString("Inessa", "21", "0958925913");
+        System.out.println(person);
     }
 
 }
